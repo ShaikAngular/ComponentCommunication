@@ -1,0 +1,12 @@
+<div class="d-flex justify-content-between bg-secondary">
+
+    <div class="mt-2 ml-2">
+        <h5><p class="text-danger">{{title}}</p></h5> 
+    </div>
+    
+    <div>
+        Site <select (change) = "selectedSite($event)"> 
+                   <option *ngFor="let sites of sa" [value] = 'sites'>{{sites}}</option>
+             </select>
+    </div>
+</div>
