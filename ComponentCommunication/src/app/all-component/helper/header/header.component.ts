@@ -22,13 +22,8 @@ export class HeaderComponent implements OnInit {
    // this.apiService.sitesListSubject.subscribe(sites=> console.log('sites', sites))
    // console.log('sites', this.sites);
    this.sitesArray = localStorage.getItem('sitesList')
-   this.sa.push(this.sitesArray)
-  //  this.sitesArray$= of(JSON.parse(this.sitesArray));
-  //  this.sitesArray$.subscribe(data=>{
-  //   console.log('data', data);
-  //   this.sa = data
-  // })
-   console.log('sites array', JSON.parse(this.sitesArray), '--', typeof(this.sa))
+   this.sitesArray = JSON.parse(this.sitesArray)
+   console.log('sites array', this.sitesArray)
   }
   
   selectedSite(e:any){
