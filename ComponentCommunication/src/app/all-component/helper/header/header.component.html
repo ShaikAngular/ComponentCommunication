@@ -6,7 +6,7 @@
     
     <div>
         Site <select (change) = "selectedSite($event)"> 
-                   <option *ngFor="let sites of sitesArray" [value] = 'sites'>{{sites}}</option>
+                   <option *ngFor="let sites of sitesArray" [selected]="sites === initialSite" [value] = 'sites'>{{sites}}</option>
              </select>
     </div>
 </div>

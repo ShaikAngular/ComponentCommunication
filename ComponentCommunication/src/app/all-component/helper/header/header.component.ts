@@ -9,7 +9,8 @@ import { ApiService } from 'src/services/api.service';
 })
 export class HeaderComponent implements OnInit {
  title = "Header";
-// @Input() sites:any;
+ // @Input() sites:any;
+ initialSite ;
  selectedValue:any;
  sitesArray:any;
  sitesArray$:Observable<any>;
@@ -19,11 +20,14 @@ export class HeaderComponent implements OnInit {
      }
 
   ngOnInit(): void {
-   // this.apiService.sitesListSubject.subscribe(sites=> console.log('sites', sites))
-   // console.log('sites', this.sites);
-   this.sitesArray = localStorage.getItem('sitesList')
-   this.sitesArray = JSON.parse(this.sitesArray)
-   console.log('sites array', this.sitesArray)
+   this.apiService.sitesListSubject.subscribe(sites=> {
+    console.log('sites', sites);
+    this.sitesArray = sites
+  })
+   //console.log('sites', this.sites);
+  //  this.sitesArray = localStorage.getItem('sitesList')
+  //  this.sitesArray = JSON.parse(this.sitesArray)
+  //  console.log('sites array', this.sitesArray)
   }
   
   selectedSite(e:any){
